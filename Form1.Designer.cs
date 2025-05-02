@@ -114,7 +114,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1158, 824);
+            ClientSize = new Size(1151, 816);
             Controls.Add(panel1);
             Controls.Add(splitContainer1);
             Name = "Form1";
