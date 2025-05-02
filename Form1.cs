@@ -1,4 +1,5 @@
-using System.Diagnostics;
+using System;
+using System.Windows.Forms;
 
 namespace Inheritance_Form
 {
@@ -9,53 +10,36 @@ namespace Inheritance_Form
             InitializeComponent();
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        private void LoadFormIntoPanel(Form form)
         {
-
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(form);
+            form.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Login loginpage = new Login();
-            loginpage.Show();
+            Login loginPage = new Login();
+            LoadFormIntoPanel(loginPage);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Register page = new Register();
-            page.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            string name = textBox1.Text.Trim();
-            int age = (int)numericUpDown1.Value;
-            string province = comboBox1.Text.Trim();
-            string district = comboBox2.Text.Trim();
-            bool hasSkill = checkedListBox1.CheckedItems.Count > 0;
-
-            if (string.IsNullOrEmpty(name) || age <= 0 || string.IsNullOrEmpty(province) || string.IsNullOrEmpty(district) || !hasSkill)
-            {
-                MessageBox.Show("Please fill all the fields properly and select at least one skill.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                Reg welcomeForm = new Reg();
-                welcomeForm.Show();
-                this.Hide();
-            }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-
+            Register registerPage = new Register();
+            LoadFormIntoPanel(registerPage);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Calculator math = new Calculator();
-            math.Show();
+            Calculator calculatorPage = new Calculator();
+            LoadFormIntoPanel(calculatorPage);
         }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e) { }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e) { }
     }
 }
