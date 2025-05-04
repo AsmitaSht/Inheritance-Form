@@ -41,5 +41,43 @@ namespace Inheritance_Form
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e) { }
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e) { }
+
+
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+
+
+        private void splitContainer1_Panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void startTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1000;
+            timer1.Start();
+            label2.Visible = true;
+
+        }
+
+        private void stopTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            label2.Visible = false;
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

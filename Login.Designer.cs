@@ -115,7 +115,7 @@
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Name = "Login";
